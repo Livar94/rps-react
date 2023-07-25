@@ -1,0 +1,74 @@
+/* Stilmall för knapp "Spela online" */
+.play-online-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Säkerställer att knappen tar hela bredden av behållaren */
+  }
+  
+  /* Grundläggande stilar för knappen */
+  .play-online-btn button {
+    background-color: rgb(255, 255, 255);
+    color: vit;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px; /* Justera maximal bredd efter behov */
+  
+    /* Säkerställ synlighet av text */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* Hover-effekt */
+  .play-online-btn button:hover {
+    background-color: #007bff; /* Mörkare nyans av blå vid hovring */
+  }
+  
+  /* Stilar för knapparna "Rock", "Paper" och "Scissors" */
+  .button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px; /* Justera maximal bredd efter behov */
+    margin: 5px; /* Lägg till mellanrum mellan knapparna */
+  }
+  
+  .button:hover {
+    background-color: #007bff; /* Mörkare nyans av blå vid hovring */
+  }
+  
+  /* Valfritt: Ta bort understrykning av knappens text */
+  .button:focus {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  /* Ytterligare stilar för knappen "Spela online" */
+  .play-online-button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px; /* Justera maximal bredd efter behov */
+    margin: 10px 0; /* Lägger till mellanrum mellan "Spela online"-knappen och de andra knapparna */
+  }
+  
+  .play-online-button:hover {
+    background-color: #007bff; 
+  }
+  
+  
