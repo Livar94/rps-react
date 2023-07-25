@@ -77,15 +77,16 @@ function GameRobot() {
           <img className='computer-hand' src={`../images/${computerChoice}.png`} alt="" />
         </div>
       </div>
-      <div children='button-div'>
-        {choices.map((choice, index) =>
-          <button className='button' key={choice} onClick={() => handleOnClick(choice)}>
-            {choice}
-          </button>
-        
-        )}
-
+      
+      <div className="button-div">
+        {!gameOver &&
+          choices.map((choice, index) => (
+            <button className="button" key={choice} onClick={() => handleOnClick(choice)}>
+              {choice}
+            </button>
+          ))}
       </div>
+
       <div className='result'>
         <h1>Turn Result: {turnResult}</h1>
         <h1>Final Result: {result}</h1>
