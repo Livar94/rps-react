@@ -12,6 +12,12 @@ function Online() {
   const [token, setToken] = useState('');
   const [name, setName] = useState('');
   const [games, setGames] = useState([]);
+
+function renderGameNumber(index) {
+    return `Game ${index + 1}`;
+  }
+
+
   useEffect(() => {
     fetchGames(); // Anropa fetchGames här för att hämta spel när komponenten monteras.
   }, []);
@@ -35,7 +41,7 @@ function Online() {
   // })
   function getToken(func, p1) {
   
-    fetch("http://localhost:8080/api/user/auth/token", {
+    fetch("http://localhost:7979/api/user/auth/token", {
       method: "post",
     //   headers: new Headers({
     //     accept: 'application/json',
@@ -56,7 +62,7 @@ function Online() {
   
   function postName (name, token) {
     console.log(token, name, 'nameToken');
-    fetch("http://localhost:8080/api/user/name", {
+    fetch("http://localhost:7979/api/user/name", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +82,7 @@ function Online() {
   }
   
   function createGame() {
-    fetch("http://localhost:8080/api/games/game", {
+    fetch("http://localhost:7979/api/games/game", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +115,7 @@ function Online() {
   }
   
   function fetchGames() {
-    fetch("http://localhost:8080/api/games/games", {
+    fetch("http://localhost:7979/api/games/games", {
       method: "get",
       headers: {
         'Content-Type': 'application/json',
@@ -127,7 +133,7 @@ function Online() {
   
   function joinGame(gameId) {
     console.log(gameId, token, "getting game and player id")
-    fetch(`http://localhost:8080/api/games/join`, {
+    fetch(`http://localhost:7979/api/games/join`, {
       method: "post",
       headers: {
         'Content-Type': 'application/json' , 
@@ -185,7 +191,7 @@ function Online() {
 
 
   return (
-    <div>
+    <div className='container'>
         <div>
         <form onSubmit={(e) => {
           console.log(e.target)
@@ -205,14 +211,15 @@ function Online() {
           <ul className="open-games">
               <span>All open games:</span>
               {/* <!-- <a class="game-link" href="./game/">game id</a> --> */}
-              {games.map((game) => (
+              {games.map((game, index) => (
           <li key={game.id}>
             {/* onClick-händelse som kallar joinGame-funktionen med id som argument */}
             {/* <a href="#" onClick={() => joinGame(game.id)}>
               {game.id}
             </a> */}
-            <button className='join-game-btn' onClick={() => joinGame(game.id)}>{game.id}</button>
-
+            <button className='join-game-btn' onClick={() => joinGame(game.id)}>
+              {renderGameNumber(index)}
+            </button>
           </li>
         ))}
           </ul>
