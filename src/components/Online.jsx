@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
-
+import '../assets/StylesOnline.css';
 
 function Online() {
 
@@ -211,7 +211,7 @@ function Online() {
             {/* <a href="#" onClick={() => joinGame(game.id)}>
               {game.id}
             </a> */}
-            <button onClick={() => joinGame(game.id)}>{game.id}</button>
+            <button className='join-game-btn' onClick={() => joinGame(game.id)}>{game.id}</button>
 
           </li>
         ))}
