@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
 import '../assets/StylesGame1.css';
 
+function getChoiceImageURL(choice) {
+  return `../images/${choice.toLowerCase()}.png`;
+}
+
 function Game() {
   const location = useLocation();
   const [userChoice, setUserChoice] = useState('rock')
@@ -57,7 +61,7 @@ function Game() {
 
   function fetchGameInfo() {
     if (!gameInfo) return
-    fetch(`http://localhost:8080/api/games/${gameInfo?.gameId}`,{
+    fetch(`http://localhost:7979/api/games/${gameInfo?.gameId}`,{
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -108,8 +112,9 @@ function Game() {
 // setInterval(fetchGameInfo, 1000);
 
 function makeMove(move) {
+  setUserChoice(move); //user's choice state variable
   if (!gameInfo) return
-  fetch(`http://localhost:8080/api/games/move`,{
+  fetch(`http://localhost:7979/api/games/move`,{
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -188,17 +193,24 @@ function makeMove(move) {
           <img className='computer-hand' src={`../images/${gameData?.playerTwoMove}.png`} alt="" />
         </div>
       </div> */}
-      <div children='button-div'>
-        {choices.map((choice, index) =>
-          <button className='button' key={choice} onClick={() => {
-            makeMove(choice)
-          }}>
-            {choice}
-          </button>
-        
-        )}
 
+<div className='choice'>
+        <div className='choice-user1'>
+          <img className='user1-hand' src={getChoiceImageURL(userChoice)} alt="" />
+        </div>
+        <div className='choice-user2'>
+          <img className='user2-hand' src={getChoiceImageURL(user2Choice)} alt="" />
+        </div>
       </div>
+      <div className='button-div'>
+        {choices.map((choice, index) => (
+          <button className="button" key={choice} onClick={() => makeMove(choice)}>
+            <img src={getChoiceImageURL(choice)} alt={choice} />
+          </button>
+        ))}
+      </div>
+
+
       <div className='result'>
         {/* <h1>Turn Result: {turnResult}</h1>
         <h1>Final Result: {result}</h1> */}

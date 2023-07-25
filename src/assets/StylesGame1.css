@@ -1,84 +1,85 @@
-/* Styles for the .App container */
+/* Stilar för .App-behållaren */
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Set the container height to full viewport height */
+  height: 100vh; /* Sätt höjden på behållaren till full skärmhöjd */
+  font-family: sans-serif;
+}
+
+/* Stilar för knappen "Spela online" */
+.play-online-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Säkerställ att knappen tar hela bredden av behållaren */
+}
+
+/* Ytterligare stilar för knappen "Spela online" */
+.play-online-button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 200px; /* Justera maximal bredd efter behov */
+  margin: 10px 0; /* Lägg till mellanrum mellan "Spela online"-knappen och de andra knapparna */
+}
+
+/* Grundläggande stilar för knapparna */
+.button {
+  background-color: lightblue;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 200px; /* Justera maximal bredd efter behov */
+  margin: 5px; /* Lägg till mellanrum mellan knapparna */
 }
 
 
-/* Stilmall för knapp "Spela online" */
-.play-online-btn {
+
+.play-online-button:hover {
+  background-color: #007bff; /* Mörkare nyans av blått vid hovring */
+}
+
+.score {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 15rem; */
+
+}
+
+/* Stilar för ikonerna */
+.choice {
+  height: 25vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%; /* Säkerställer att knappen tar hela bredden av behållaren */
-  }
-  
-  /* Grundläggande stilar för knappen */
-  .play-online-btn button {
-    background-color: rgb(255, 255, 255);
-    color: vit;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 200px; /* Justera maximal bredd efter behov */
-  
-    /* Säkerställ synlighet av text */
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  
-  /* Hover-effekt */
-  .play-online-btn button:hover {
-    background-color: #007bff; /* Mörkare nyans av blå vid hovring */
-  }
-  
-  /* Stilar för knapparna "Rock", "Paper" och "Scissors" */
-  .button {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 200px; /* Justera maximal bredd efter behov */
-    margin: 5px; /* Lägg till mellanrum mellan knapparna */
-  }
-  
-  .button:hover {
-    background-color: #007bff; /* Mörkare nyans av blå vid hovring */
-  }
-  
-  /* Valfritt: Ta bort understrykning av knappens text */
-  .button:focus {
-    outline: none;
-    text-decoration: none;
-  }
-  
-  /* Ytterligare stilar för knappen "Spela online" */
-  .play-online-button {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 200px; /* Justera maximal bredd efter behov */
-    margin: 10px 0; /* Lägger till mellanrum mellan "Spela online"-knappen och de andra knapparna */
-  }
-  
-  .play-online-button:hover {
-    background-color: #007bff; 
-  }
-  
-  
+}
+
+.user1-hand,
+.user2-hand {
+  max-width: 250px; /* Justera maximal bredd för ikonerna */
+  height: auto;
+  margin: 10px; /* Lägg till mellanrum mellan ikonerna */
+}
+
+/* Ytterligare stilar för "Turn Result" och "Final Result" */
+.result {
+  text-align: center;
+  margin-top: 20px; /* Lägg till marginal ovanför texten */
+}
+
+
+img{
+  max-width: 100px;
+}
