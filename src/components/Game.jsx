@@ -182,8 +182,8 @@ function makeMove(move) {
     <div className="App">
       <h1 className='heading'>Rock Paper Scissors</h1>
       <div className='score'>
-        <h1>{user1Label} : {userScore}</h1>
-        <h1>{user2Label}: {user2Score}</h1>
+        <h1 className='score-user1'>{user1Label} : {userScore}</h1>
+        <h1 className='score-user2'>{user2Label}: {user2Score}</h1>
       </div>
       {/* <div className='choice'>
         <div className='choice-user'>
