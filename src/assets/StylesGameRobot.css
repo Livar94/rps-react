@@ -16,14 +16,27 @@
   }
   
   .score {
-    height: 20vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 15rem; */
-  
+    /* padding: 15rem; */ /* Ta bort denna rad för att ta bort den stora paddingen */
+    margin: 20px; /* Lägg till marginal runt poängavsnittet */
   }
-  
+
+  /* Stilar för poängtexterna */
+  .h1-score1 {
+  font-size: 24px;
+  margin: 10px; /* Lägg till marginal mellan poängtexterna */
+  border: 1px solid;
+  }
+
+  .h1-score2{
+    font-size: 24px;
+    margin: 10px; /* Lägg till marginal mellan poängtexterna */
+    border: 1px solid;  
+  }
+
   .choice {
     height: 25vh;
     display: flex;
@@ -31,10 +44,10 @@
   }
   
   .computer-hand {
-    width: 250px;
+    max-width: 250px;
   }
   
   .user-hand {
-    width: 250px;
+    max-width: 250px;
   }
   

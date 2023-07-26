@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/StylesGame.css';
+import '../assets/StylesGameRobot.css';
 import { Link } from 'react-router-dom';
 
 
@@ -66,8 +66,8 @@ function GameRobot() {
     <div className="App">
       <h1 className='heading'>Rock Paper Scissors</h1>
       <div className='score'>
-        <h1>User Points: {userPoints}</h1>
-        <h1>Computer Points: {computerPoints}</h1>
+        <h1 className='h1-score1'>User Points: {userPoints}</h1>
+        <h1 className='h1-score2'>Computer Points: {computerPoints}</h1>
       </div>
       <div className='choice'>
         <div className='choice-user'>
@@ -98,7 +98,7 @@ function GameRobot() {
       </div>
 
       <div className='play-online-btn'>
-        <button>
+        <button className='play-online-button'>
           <Link to="/online">Play Online</Link>
 
         </button>
