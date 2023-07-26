@@ -81,7 +81,7 @@ border: 1px solid;
 
 .user1-hand,
 .user2-hand {
-  max-width: 250px; /* Justera maximal bredd för ikonerna */
+  max-width: 200px; /* Justera maximal bredd för ikonerna */
   height: auto;
   margin: 10px; /* Lägg till mellanrum mellan ikonerna */
 }
