@@ -82,8 +82,9 @@ function Game() {
       if (gameInfo?.playerOne?.playerName == data?.playerOne) {
     //         user1Label.innerText = gameInfo.playerOne.playerName
     //         user2Label.innerText = gameData.playerTwo
-    setUser1Label(gameInfo?.playerOne?.playerName)
-    setUser2Label(data?.playerTwo)
+    setUser1Label(gameInfo?.playerOne?.playerName === data?.playerOne ? gameInfo?.playerOne?.playerName : data?.playerOne)
+    setUser2Label(gameInfo?.playerOne?.playerName === data?.playerOne ? data?.playerTwo : gameInfo?.playerOne?.playerName)
+
 
           } else {
     //         user1Label.innerText = gameData.playerOne
@@ -104,6 +105,11 @@ function Game() {
               // result_p.innerText = `You ${gameData.playerTwoMove}, ${gameData.playerOne} ${gameData.playerOneMove}`
               setResult_p(`You ${data?.playerTwoMove}, ${data?.playerOne} ${data?.playerOneMove}`)
             };
+
+            if (data?.playerOneMove && data?.playerTwoMove) {
+              setUserChoice(data?.playerOneMove.toLowerCase());
+              setUser2Choice(data?.playerTwoMove.toLowerCase());
+            }
     })
     .catch(error => {
       console.log(error, "createGame");
