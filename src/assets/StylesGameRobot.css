@@ -27,14 +27,20 @@
   /* Stilar för poängtexterna */
   .h1-score1 {
   font-size: 24px;
+  padding: 10px;
+  border-radius: 5px;
   margin: 10px; /* Lägg till marginal mellan poängtexterna */
-  border: 1px solid;
+  
+  background-color: white;
   }
 
   .h1-score2{
     font-size: 24px;
+    padding: 10px;
+    border-radius: 5px;
     margin: 10px; /* Lägg till marginal mellan poängtexterna */
-    border: 1px solid;  
+   
+    background-color: white;
   }
 
   .choice {
@@ -51,3 +57,12 @@
     max-width: 200px;
   }
   
+
+  .button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Säkerställ att knappen tar hela bredden av behållaren */
+  }
+ 
+

@@ -26,13 +26,13 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  max-width: 200px; /* Justera maximal bredd efter behov */
-  margin: 10px 0; /* Lägg till mellanrum mellan "Spela online"-knappen och de andra knapparna */
+  max-width: 200px; 
+  margin: 10px 0; /* Lägger till mellanrum mellan "Spela online"-knappen och de andra knapparna */
 }
 
 /* Grundläggande stilar för knapparna */
 .button {
-  background-color: lightblue;
+  background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
@@ -40,8 +40,8 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  max-width: 200px; /* Justera maximal bredd efter behov */
-  margin: 5px; /* Lägg till mellanrum mellan knapparna */
+  max-width: 200px; 
+  margin: 5px; /* Lägger till mellanrum mellan knapparna */
 }
 
 
@@ -57,20 +57,19 @@
   align-items: center;
   /* padding: 15rem; */ /* Ta bort denna rad för att ta bort den stora paddingen */
   margin: 20px; /* Lägg till marginal runt poängavsnittet */
+
 }
 
 /* Stilar för poängtexterna */
+.score-user2
 .score-user1 {
 font-size: 24px;
+background-color: white;
 margin: 10px; /* Lägg till marginal mellan poängtexterna */
 border: 1px solid;
 }
 
-.score-user2{
-  font-size: 24px;
-  margin: 10px; /* Lägg till marginal mellan poängtexterna */
-  border: 1px solid;  
-}
+
 
 /* Stilar för ikonerna */
 .choice {
@@ -90,9 +89,23 @@ border: 1px solid;
 .result {
   text-align: center;
   margin-top: 20px; /* Lägg till marginal ovanför texten */
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
 }
 
+.finalResult{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin-bottom: 50px;
 
+}
+
+.button{
+  margin-bottom: 50px;
+}
 img{
   max-width: 100px;
 }
