@@ -41,7 +41,7 @@ function renderGameNumber(index) {
   // })
   function getToken(func, p1) {
   
-    fetch("http://localhost:7979/api/user/auth/token", {
+    fetch("http://localhost:8080/api/user/auth/token", {
       method: "post",
     //   headers: new Headers({
     //     accept: 'application/json',
@@ -62,7 +62,7 @@ function renderGameNumber(index) {
   
   function postName (name, token) {
     console.log(token, name, 'nameToken');
-    fetch("http://localhost:7979/api/user/name", {
+    fetch("http://localhost:8080/api/user/name", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +82,7 @@ function renderGameNumber(index) {
   }
   
   function createGame() {
-    fetch("http://localhost:7979/api/games/game", {
+    fetch("http://localhost:8080/api/games/game", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ function renderGameNumber(index) {
   }
   
   function fetchGames() {
-    fetch("http://localhost:7979/api/games/games", {
+    fetch("http://localhost:8080/api/games/games", {
       method: "get",
       headers: {
         'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ function renderGameNumber(index) {
   
   function joinGame(gameId) {
     console.log(gameId, token, "getting game and player id")
-    fetch(`http://localhost:7979/api/games/join`, {
+    fetch(`http://localhost:8080/api/games/join`, {
       method: "post",
       headers: {
         'Content-Type': 'application/json' , 

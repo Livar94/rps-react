@@ -1,11 +1,10 @@
 /* Stilar för .App-behållaren */
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Sätt höjden på behållaren till full skärmhöjd */
-  font-family: sans-serif;
+  height: 100vh;
+}
+
+.rock-paper-heading {
+  padding: 5rem;
 }
 
 /* Stilar för knappen "Spela online" */
@@ -32,17 +31,23 @@
 
 /* Grundläggande stilar för knapparna */
 .button {
-  background-color: rgb(255, 255, 255);
+  
   color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   max-width: 200px; 
-  margin: 5px; /* Lägger till mellanrum mellan knapparna */
+  margin: 1rem;
+  background-color: inherit;
+
+
 }
+
+/* .button-div {
+  background-color: yellow;
+} */
 
 
 
@@ -64,19 +69,20 @@
 .score-user2
 .score-user1 {
 font-size: 24px;
-background-color: white;
-margin: 10px; /* Lägg till marginal mellan poängtexterna */
+font-weight: bold;
+margin: 10px;
 border: 1px solid;
+padding: 1rem;
 }
 
 
 
 /* Stilar för ikonerna */
-.choice {
+/* .choice {
   height: 25vh;
     display: flex;
     justify-content: center;
-}
+} */
 
 .user1-hand,
 .user2-hand {

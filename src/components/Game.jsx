@@ -70,7 +70,7 @@ function Game() {
   function fetchGameInfo() {
     
     if (!gameInfo) return; // Om ingen spelinfo, returnera
-    fetch(`http://localhost:7979/api/games/${gameInfo?.gameId}`, {
+    fetch(`http://localhost:8080/api/games/${gameInfo?.gameId}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -150,7 +150,7 @@ function makeMove(move) {
   //setUserChoice(move); //user's choice state variable
   setMovesMade(false); //We set movesMade state variable to false here
   if (!gameInfo) return
-  fetch(`http://localhost:7979/api/games/move`,{
+  fetch(`http://localhost:8080/api/games/move`,{
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -220,8 +220,11 @@ function makeMove(move) {
 
   return (
     <div className="App">
-      <h1 className='heading'>Rock Paper Scissors</h1>
+      <div className='rock-paper-heading'>
+        <h1 className='heading'>Rock Paper Scissors</h1>
+      </div>
       <div className='score'>
+        
         <h1 className='score-user1'>{user1Label} : {userScore}</h1>
         <h1 className='score-user2'>{user2Label}: {user2Score}</h1>
       </div>
