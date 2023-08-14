@@ -212,12 +212,12 @@ function renderGameNumber(index) {
               <span>All open games:</span>
               {/* <!-- <a class="game-link" href="./game/">game id</a> --> */}
               {games.map((game, index) => (
-          <li key={game.id}>
+          <li key={game?.gameId}>
             {/* onClick-händelse som kallar joinGame-funktionen med id som argument */}
             {/* <a href="#" onClick={() => joinGame(game.id)}>
               {game.id}
             </a> */}
-            <button className='join-game-btn' onClick={() => joinGame(game.id)}>
+            <button className='join-game-btn' onClick={() => joinGame(game?.gameId)}>
               {renderGameNumber(index)}
             </button>
           </li>
