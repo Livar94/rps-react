@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function getChoiceImageURL(choice) {
   if (!choice) {
-    return null; // or return a default image URL if you prefer
+    return null; 
   }
 
   return `../images/${choice.toLowerCase()}.png`;
@@ -15,10 +15,6 @@ function Game() {
   const location = useLocation();
   const [userChoice, setUserChoice] = useState(null)
   const [user2Choice, setUser2Choice] = useState(null)
-  const [userPoints, setUserPoints] = useState(0)
-  const [user2Points, setUser2Points] = useState(0)
-  const [turnResult, setTurnResult] = useState(null)
-  const [result, setResult] = useState('Lets see who wins')
   const [gameOver, setGameOver] = useState(false)
   const gameInfo = location.state && location.state.data;
   const choices = ['ROCK', 'PAPER', 'SCISSORS']
@@ -34,34 +30,24 @@ function Game() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Starta intervallet när komponenten monteras
+   
     const id = setInterval(() => {
       fetchGameInfo()
-    }, 1000); // Intervall i millisekunder, här satt till 1000 ms (1 sekund)
+    }, 1000); 
 
-    // Spara intervallet i tillståndsvariabeln så att vi kan rensa det senare
+   
     setIntervalId(id);
 
-    // Rensa intervallet när komponenten avmonteras
     return () => {
       clearInterval(intervalId);
     };
   }, []);
 
   useEffect(() => {
-    console.log(gameInfo); // Här loggar vi gameInfo när komponenten renderas eller uppdateras.
+    console.log(gameInfo); 
   }, [gameInfo]);
   
-  // const handleOnClick = (choice) => {
-  //   setUserChoice(choice)
-  //   // generateUser2Choice()
-  // }
-
-
-  // const generateComputerChoice = () => {
-  //   const randomChoice = choices[Math.floor(Math.random() * choices.length)]
-  //   setComputerChoice(randomChoice)
-  // }
+  
 
   const reset = () => {
     window.location.reload()
@@ -69,7 +55,7 @@ function Game() {
 
   function fetchGameInfo() {
     
-    if (!gameInfo) return; // Om ingen spelinfo, returnera
+    if (!gameInfo) return;
     fetch(`http://localhost:8080/api/games/${gameInfo?.gameId}`, {
       method: "post",
       headers: {
@@ -82,9 +68,8 @@ function Game() {
     .then(response => response.json())
     .then(data => {
 
-      setGameData(data); // Uppdatera speldata
+      setGameData(data); 
 
-      // Uppdatera etiketter för spelare
       if (gameInfo?.playerOne?.playerName == data?.playerOne) {
         setUser1Label(gameInfo?.playerOne?.playerName);
         setUser2Label(data?.playerTwo);
@@ -92,13 +77,11 @@ function Game() {
         setUser1Label(data?.playerOne);
         setUser2Label(gameInfo?.playerOne?.playerName);
       }
-
-      // Uppdatera spelarens poäng
       setUserScore(data?.playerOneWins);
       setUser2Score(data?.playerTwoWins);
 
      
-      // If the game is over, announce the winner. Otherwise, display the moves.
+
     if (data?.status === 'PLAYER_ONE_IS_THE_WINNER' || data?.status === 'PLAYER_TWO_IS_THE_WINNER') {
       setGameOver(true);
       setResult_p(data?.status === 'PLAYER_ONE_IS_THE_WINNER' ? `${data?.playerOne.toUpperCase()} ÄR VINNAREN!!!` : `${data?.playerTwo.toUpperCase()} ÄR VINNAREN!!!`);
@@ -111,13 +94,13 @@ function Game() {
     
       }
 
-      // Om båda spelarna har gjort sina drag
+
       if (data?.playerOneMove && data?.playerTwoMove) {
         setUserChoice(gameInfo?.playerOne?.playerName == data?.playerOne ? data?.playerOneMove.toLowerCase() : data?.playerTwoMove.toLowerCase());
         setUser2Choice(gameInfo?.playerOne?.playerName == data?.playerOne ? data?.playerTwoMove.toLowerCase() : data?.playerOneMove.toLowerCase());
         
-        setMovesMade(true); // Om båda spelarna har gjort sina drag, sätt movesMade till true
-        setUserMove(null); // Återställ userMove efter att båda spelarna har gjort sina drag
+        setMovesMade(true); 
+        setUserMove(null); 
 
         // Visa rätt resultatmeddelande
         if (gameInfo?.playerOne?.playerName == data?.playerOne) {
@@ -156,7 +139,7 @@ function makeMove(move) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      // playerId: token
+   
       playerId: gameInfo?.playerOne?.playerId,
       gameId: gameInfo?.gameId,
       playerMove: move
@@ -181,42 +164,6 @@ function makeMove(move) {
 
 }
 
-// function convertToWord(letter) {
-//   if (letter === 'r') return 'ROCK';
-//   if (letter === 'p') return 'PAPER';
-//   return 'SCISSORS'
-// }
-
-  // useEffect(() => {
-  //   const comboMoves = userChoice + user2Choice
-  //   if(userPoints <=4 && user2Points <=4) {
-  //     if(comboMoves === 'rockscissors' || comboMoves === 'paperrock' || comboMoves === 'scissorspaper') {
-  //       const updatedUserPoints = userPoints + 1
-  //       setUserPoints(updatedUserPoints)
-  //       setTurnResult('User got the point')
-  //       if(updatedUserPoints === 5) {
-  //         setGameOver(true)
-  //         setResult('User wins!!!')
-  //       }
-  //     }
-
-  //     if (comboMoves === 'paperscissors' || comboMoves === 'scissorsrock' || comboMoves === 'rockpaper'){
-  //       const updatedUser2Points = user2Points + 1
-  //       setUser2Points(updatedUser2Points)
-  //       setResult('Computer got the point')
-  //       if(updatedUser2Points === 5){
-  //         setGameOver(true)
-  //         setResult('Computer wins')
-  //       }
-  //       }
-  //   }
-
-
-  //   if(comboMoves === 'rockrock' || comboMoves === 'paperpaper' || comboMoves === 'scissorsscissors'){
-  //     setTurnResult('No one got the point')
-  //   }
-
-  // }, [userChoice, user2Choice])
 
   return (
     <div className="App">
@@ -229,8 +176,6 @@ function makeMove(move) {
         <h1 className='score-user2'>{user2Label}: {user2Score}</h1>
       </div>
     
-
-{/*Har satt ikonens state variabeln default värde till null och nedan sett till att det inte crashar om det returneras null istället för ikonvärdet*/}
 
 <div className='choice'>
   <div className='choice-user1'>
@@ -262,15 +207,6 @@ function makeMove(move) {
 <div className='button-div'>
   {gameOver && <button className='button' onClick={() => navigate('/')}>Restart Game</button>}
 </div>
-
-
-      {/* <div className='play-online-btn'>
-        <button>
-          <Link to="/game">Create Game</Link>
-
-        </button>
-
-      </div> */}
     </div>
   );
 }

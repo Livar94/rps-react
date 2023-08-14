@@ -1,10 +1,5 @@
-/* Container for the form and buttons */
 .container {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;  */
+ margin: 0;
   
 }
 
@@ -14,8 +9,6 @@
 
 }
 
-
-/* Styles for the "Write Name" button */
 .generate-token {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -28,27 +21,26 @@
 }
 
 .generate-token:hover {
-  background-color: #007bff; /* Darker shade of blue on hover */
+  background-color: #007bff; 
 }
 
-/* Styles for the text input field */
+
 .write-name input[type="text"] {
-  background-color: #f1f1f1; /* Light gray background color */
-  border: 1px solid #ccc; /* Gray border */
+  background-color: #f1f1f1; 
+  border: 1px solid #ccc; 
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
   margin-right: 10px;
-  width: 200px; /* Adjust the width as needed */
+  width: 200px; 
   margin-top: 5rem;
 }
 
-/* Optional: Style the placeholder text */
+
 .write-name input[type="text"]::placeholder {
-  color: #666; /* Gray placeholder text color */
+  color: #666; 
 }
 
-/* Styles for the "Create Game" button */
 .create-game {
   background-color: green;
   color: white;
@@ -62,10 +54,10 @@
 }
 
 .create-game:hover {
-  background-color: #28a745; /* Darker shade of green on hover */
+  background-color: #28a745; 
 }
 
-/* Styles for the "Join Game" button */
+
 .join-game-btn {
   background-color: orange;
   color: white;
@@ -79,5 +71,5 @@
 }
 
 .join-game-btn:hover {
-  background-color: #111111; /* Darker shade of orange on hover */
+  background-color: #111111; 
 }

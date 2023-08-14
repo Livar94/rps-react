@@ -20,16 +20,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 15rem; */ /* Ta bort denna rad för att ta bort den stora paddingen */
-    margin: 20px; /* Lägg till marginal runt poängavsnittet */
+    margin: 20px; 
   }
 
-  /* Stilar för poängtexterna */
   .h1-score1 {
   font-size: 24px;
   padding: 10px;
   border-radius: 5px;
-  margin: 10px; /* Lägg till marginal mellan poängtexterna */
+  margin: 10px; 
   
   background-color: white;
   }
@@ -38,7 +36,7 @@
     font-size: 24px;
     padding: 10px;
     border-radius: 5px;
-    margin: 10px; /* Lägg till marginal mellan poängtexterna */
+    margin: 10px; 
    
     background-color: white;
   }
@@ -62,7 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Säkerställ att knappen tar hela bredden av behållaren */
+    width: 100%; 
   }
  
 
